@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const Profile = require('../../models/Profile');
 const auth = require('../../middleware/auth');
+const Post = require('../../models/Post');
+const User = require('../../models/User');
+
 const {check, validationResult} = require('express-validator/check');
 const checkObjectId = require('../../middleware/checkObjectId');
 
@@ -67,7 +70,7 @@ router.post(
   
 router.get('/', async(req, res)=>{
     try {
-        const profiles = Profile.find().populate('user', ['name', 'avatar']);
+        const profiles = await Profile.find().populate('user', ['name', 'avatar']);
         res.json(profiles);
     } catch (err) {
         console.error(err.message);
