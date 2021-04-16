@@ -10,12 +10,11 @@ const initialState = {
   location: '',
   status: '',
   skills: '',
-  githubusername: '',
   bio: '',
   twitter: '',
   facebook: '',
   linkedin: '',
-  youtube: '',
+  github: '',
   instagram: ''
 };
 
@@ -51,12 +50,11 @@ const ProfileForm = ({
     location,
     status,
     skills,
-    githubusername,
     bio,
     twitter,
     facebook,
     linkedin,
-    youtube,
+    github,
     instagram
   } = formData;
 
@@ -141,19 +139,6 @@ const ProfileForm = ({
           </small>
         </div>
         <div className="form-group">
-          <input
-            type="text"
-            placeholder="Github Username"
-            name="githubusername"
-            value={githubusername}
-            onChange={onChange}
-          />
-          <small className="form-text">
-            If you want your latest repos and a Github link, include your
-            username
-          </small>
-        </div>
-        <div className="form-group">
           <textarea
             placeholder="A short bio of yourself"
             name="bio"
@@ -199,12 +184,12 @@ const ProfileForm = ({
             </div>
 
             <div className="form-group social-input">
-              <i className="fab fa-youtube fa-2x" />
+              <i className="fab fa-github fa-2x" />
               <input
                 type="text"
-                placeholder="YouTube URL"
-                name="youtube"
-                value={youtube}
+                placeholder="GitHub URL"
+                name="github"
+                value={github}
                 onChange={onChange}
               />
             </div>

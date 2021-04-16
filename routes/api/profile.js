@@ -36,7 +36,7 @@ router.post(
       // destructure the request
       const {
         skills,
-        youtube,
+        github,
         twitter,
         instagram,
         linkedin,
@@ -51,7 +51,7 @@ router.post(
         ...rest
       };
   
-      profileFields.social = { youtube, twitter, instagram, linkedin, facebook };
+      profileFields.social = { github, twitter, instagram, linkedin, facebook };
   
       try {
         // Using upsert option (creates new doc if no match is found):
